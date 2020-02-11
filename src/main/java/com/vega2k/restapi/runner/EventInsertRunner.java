@@ -20,27 +20,7 @@ public class EventInsertRunner implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		IntStream.range(0, 15).forEach(this::generateEvent);
-	}	
-
-//    @Test
-//    public void queryEvents() throws Exception {
-//        // Given
-//        IntStream.range(0, 30).forEach(this::generateEvent);
-
-//        // When & Then
-//        this.mockMvc.perform(get("/api/events")
-//                .param("page", "1")
-//                .param("size", "10")
-//                .param("sort", "name,DESC"))
-//                .andDo(print())
-//                .andExpect(status().isOk())
-//                .andExpect(jsonPath("page").exists())
-//                .andExpect(jsonPath("_embedded.eventList[0]._links.self").exists())
-//                .andExpect(jsonPath("_links.self").exists())
-//                .andExpect(jsonPath("_links.profile").exists())
-//                .andDo(document("query-events"))
-//        ;
-//    }
+	}
 	
     private Event generateEvent(int index) {
         Event event = buildEvent(index);
